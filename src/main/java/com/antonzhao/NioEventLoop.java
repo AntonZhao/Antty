@@ -94,7 +94,8 @@ public class NioEventLoop extends SingleThreadEventLoop {
                 // 走到这里，说明selector没有阻塞
                 processSelectedKeys(selector.selectedKeys());
             } catch (IOException e) {
-                logger.error(e.getMessage());
+                logger.error("nio handle error.", e);
+//                logger.error(e.getMessage());
             } finally {
                 // 执行单线程执行器中的所有任务
                 runAllTasks();
