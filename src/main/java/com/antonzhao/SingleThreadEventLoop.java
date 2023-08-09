@@ -7,10 +7,15 @@ import java.io.IOException;
 import java.nio.channels.SelectionKey;
 import java.nio.channels.SocketChannel;
 
-public abstract class SingleThreadEventLoop extends SingleThreadEventExecutor {
+public abstract class SingleThreadEventLoop extends SingleThreadEventExecutor implements EventLoop {
     private final static Logger logger = LoggerFactory.getLogger(SingleThreadEventLoop.class);
 
     public SingleThreadEventLoop() {
+    }
+
+    @Override
+    public EventLoop next() {
+        return this;
     }
 
     public void register(SocketChannel socketChannel, NioEventLoop nioEventLoop) {

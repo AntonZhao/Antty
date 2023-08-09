@@ -11,6 +11,7 @@ import java.nio.channels.SocketChannel;
 import java.nio.channels.spi.SelectorProvider;
 import java.util.Iterator;
 import java.util.Set;
+import java.util.concurrent.TimeUnit;
 
 // 负责nio
 public class NioEventLoop extends SingleThreadEventLoop {
@@ -101,5 +102,10 @@ public class NioEventLoop extends SingleThreadEventLoop {
                 runAllTasks();
             }
         }
+    }
+
+    @Override
+    public void shutdownGracefully(long quietPeriod, long timeout, TimeUnit unit) {
+
     }
 }
