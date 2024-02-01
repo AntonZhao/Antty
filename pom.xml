@@ -36,6 +36,12 @@
             <version>5.8.20</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.hyperic</groupId>
+            <artifactId>sigar</artifactId>
+            <version>1.6.4</version>
+        </dependency>
+
 
     </dependencies>
 
